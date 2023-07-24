@@ -15,7 +15,7 @@ body {
     padding: 50px;
 }
 
-/* Base styles for columns */
+
 .column-layout {
     position: absolute;
     top: 50%;
@@ -27,10 +27,10 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
     /* padding: 5%; */
-    display: grid; /* Use CSS grid layout */
-    grid-template-columns: 2fr 1.5fr; /* Two equal-width columns */
+    display: grid; 
+    grid-template-columns: 2fr 1.5fr; 
     grid-gap: 0px;
-    grid-auto-rows: minmax(100px, auto); /* Minimum height 100px, auto height as content grows */
+    grid-auto-rows: minmax(100px, auto); 
     padding: 20px;
     box-sizing: border-box;
 }
@@ -62,11 +62,11 @@ input {
 
 input:focus {
     outline: none;
-    border-color: #4CAF50; /* Change the border color on focus */
+    border-color: #4CAF50; 
 }
 
 input[type="radio"] {
-    outline: none; /* Remove outline when in focus */
+    outline: none; 
   }
 
   fieldset {
@@ -92,7 +92,7 @@ input[type="radio"] {
     padding-right: 0px;
 }
 
-/* Center the sidebar image and text */
+
 .sidebar-one .image-text {
     position: absolute;
     top: 50%;
@@ -106,7 +106,7 @@ input[type="radio"] {
     text-align: center;
 }
 
-/* Sidebar Image */
+
 .sidebar-one img{
     position: absolute;
     top: 50%;
@@ -120,10 +120,10 @@ input[type="radio"] {
   
 }
 
-/* Common submit button */
+
 .submit-button {
     text-align: center;
-    width: 100%; /* Full width on larger screens */
+    width: 100%; 
 }
 
 .submit-button button {
@@ -146,11 +146,11 @@ input[type="radio"] {
 @media screen and (min-width: 768px) {
     .submit-button {
         text-align: center;
-        align-self: center; /* Center the submit button vertically */
+        align-self: center; 
     }
 }
 
-/* Adjust styles for smaller screens */
+
 @media screen and (max-width: 767px) {
     .column-layout {
         grid-template-columns: 1fr; /* Single column layout for smaller screens */
