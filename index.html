@@ -1,0 +1,90 @@
+<!-- Linking Webpages -->
+<!DOCTYPE html>
+<html>
+    <head> 
+        <meta char="utf-8">
+        <title>Sign Up Page</title>
+        <link rel="stylesheet" href="styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+      <div class="background">
+            <div class="column-layout">
+                <div class="sidebar-one">
+                    <div class="sidebarImage">
+                        <img src="Sign-Up-Image 2.png" alt="Image">
+                    </div>
+                    <div class="image-text">
+                        <p>Join The Community</p>
+                    </div>
+                </div>
+
+                <div class="main-column">
+
+                    <form>
+                        <section class="first"> 
+                            <label for ="firstName">First Name:</label><br>
+                            <input id ="firstName" type="text" name="firstName" required>
+                        </section>
+
+                        <section class="last">  
+                            <label for="lastName">Last Name:</label><br>
+                            <input id="lastName" type="text" name="lastName">
+                        </section>
+
+                        <section class="email">
+                            <label for="email">Email:</label><br>
+                            <input id="email" type="email" name="email" required placeholder="eg: john123@gmail.com" >  
+                        </section>
+                 
+                        <section class="password">
+                            <label for="password">Password:</label><br>
+                            <input id="password" type="password" name="password" required>
+                        </section>
+
+                        <section class="confirmPassword">
+                            <label for="confirmPassword">Confirm Password:</label><br>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        </section>
+                        <section class="gender">
+                            <fieldset>
+                            <legend>Gender </legend><br>
+                               <input id="female" type="radio" name="gender" value="Female"> <label for="female">Female</label><br>
+                               <input id="male" type="radio" name="gender" value="Male"> <label for="male">Male</label><br>
+                               <input id="notSay" type="radio" name="gender" value="Unspecified"> <label for="notSay">Prefer not to say</label><br>
+                            </fieldset>
+                        </section>
+                   
+                        <section class="language">
+                        <label for ="preferredLanguage">Preferred Language: </label><br>
+                        <select id="preferredLanguage" name="preferredLanguage">
+                            <option value="english">English</option>
+                            <option value="chinese">Chinese</option>
+                            <option value="french">French</option>
+                            <option value="spanish">Spanish</option>
+                            <option value="german">German</option>
+                        </select> 
+                        </section>
+                        <section>
+                            <label for="interests">Interests:</label><br>
+                            <!-- <input id="interests" type="text" name="interests" maxlength="100"> -->
+                            <textarea id="interests" name="interests" rows="4" maxlength="100" placeholder="Max 100 Characters.."></textarea>
+                        </section>
+                    </form>
+
+                    <div class="submit-button">
+                        <button type="submit">Sign Up</button>
+                    </div>
+                </div>
+
+            </div>
+
+       
+      </div>
+    
+    </body>
+    <!-- <footer>
+    <a href="index.html">Back to Homepage</a>
+    </footer> -->
+
+    </html>
