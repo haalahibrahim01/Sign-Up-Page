@@ -44,11 +44,16 @@ body * {
 }
 
 .main-column {
-    background-color: #e4d7d7;
+    /* background-color: #e4d7d7; */
     padding: 20px 15px 20px 5px;
     box-sizing: border-box;
     border-top-right-radius:30px ;
     border-bottom-right-radius: 30px ;
+}
+.main-column h1 {
+    color: #fff;
+    opacity:0.7;
+    display: none;
 }
 
 
@@ -59,6 +64,9 @@ form section {
     justify-content: space-between;
 }
 
+form label{
+    margin-bottom: 5px;
+}
   
 input[type=text],
 input[type=password],
@@ -69,7 +77,7 @@ textarea,select {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 15px;
-    font-size: 16px;
+    font-size: 15px;
     transition: border-color 0.2s ease;
     width: 100%;
     display: block;
@@ -88,7 +96,8 @@ input[type="radio"] {
   fieldset {
     border: none;
     padding: 0;
-    margin: 0;
+    /* margin: 0; */
+    margin-bottom: 10px ;
   }
 
 /* .main-column section {
@@ -154,13 +163,14 @@ input[type="radio"] {
 .checkbox label {
     padding-top: 5px;
     margin: 0; 
-    font-size: 7px;
+    font-size: 15px;
     color: gray;
 }
 
 .submit-button {
     text-align: center;
     width: 100%; 
+    margin-top: 10px;
 }
 
 .submit-button button {
@@ -181,7 +191,7 @@ input[type="radio"] {
 
 
 
-@media screen and (min-width: 700px) {
+/* @media screen and (min-width: 700px) {
     
     .submit-button {
         text-align: center;
@@ -210,7 +220,7 @@ input[type="radio"] {
     section .interests{
         padding-bottom: 15px;
     }
-}
+} */
 
 
 @media screen and (max-width: 700px) {
@@ -218,17 +228,19 @@ input[type="radio"] {
         grid-template-columns: 1fr; 
     }
 
-    /* .background{
-    
-    } */
     .sidebar-one {
         display: none; 
     }
+
     .main-column{
-        padding:0px;
-        background-color: transparent;
-        /* margin: */
+        padding:15px;
     }
+
+    .main-column h1 {
+        display: block;
+        text-align: center;
+    }
+
     .main-column section {
         margin-bottom: 0px;
     }
@@ -239,9 +251,15 @@ input[type="radio"] {
     .main-column .interests{
         margin-bottom: 0px;
           }
-    .main-column label{
-            font-size: 13px;
+    /* .main-column label{
+            font-size: 14px;
           }
+    .main-column fieldset{
+        font-size: 14px;
+    }      
+    .main-column option{
+        font-size: 14px;
+    } */
 
 }
 
@@ -254,6 +272,9 @@ input[type="radio"] {
         margin: 0;
         width: 100%;
     }
+    .main-column{
+        padding:10px;
+    }
     .sidebar-one {
         display: none; 
     }
@@ -271,6 +292,9 @@ input[type="radio"] {
     .main-column label{
             font-size: 13px;
           }
+    .main-column fieldset {
+        font-size: 13px;
+    }
           .background{
             padding: 20px;
             /* margin-top: 0px; */
