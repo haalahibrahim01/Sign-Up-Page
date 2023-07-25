@@ -21,30 +21,35 @@
 
                 <div class="main-column">
 
-                    <form>
+                    <form onsubmit="return validateForm()">
                         <section class="first"> 
                             <label for ="firstName">First Name:</label><br>
                             <input id ="firstName" type="text" name="firstName" required>
+                            <span id="firstNameError" class="error-message"></span>
                         </section>
 
                         <section class="last">  
                             <label for="lastName">Last Name:</label><br>
                             <input id="lastName" type="text" name="lastName">
+                            <span id="lastNameError" class="error-message"></span>
                         </section>
 
                         <section class="email">
                             <label for="email">Email:</label><br>
                             <input id="email" type="email" name="email" required placeholder="eg: john123@gmail.com" >  
+                            <span id="emailError" class="error-message"></span>
                         </section>
                  
                         <section class="password">
                             <label for="password">Password:</label><br>
                             <input id="password" type="password" name="password" required>
+                            <span id="passwordError" class="error-message"></span>
                         </section>
 
                         <section class="confirmPassword">
                             <label for="confirmPassword">Confirm Password:</label><br>
                             <input type="password" id="confirmPassword" name="confirmPassword" required>
+                            <span id="confirmPasswordError" class="error-message"></span>
                         </section>
                         <section class="gender">
                             <fieldset>
@@ -53,6 +58,7 @@
                                <input id="male" type="radio" name="gender" value="Male"> <label for="male">Male</label><br>
                                <input id="notSay" type="radio" name="gender" value="Unspecified"> <label for="notSay">Prefer not to say</label><br>
                             </fieldset>
+                            <span id="genderError" class="error-message"></span>
                         </section>
                    
                         <section class="language">
@@ -64,25 +70,100 @@
                             <option value="spanish">Spanish</option>
                             <option value="german">German</option>
                         </select> 
+                        <span id="preferredLanguageError" class="error-message"></span>
                         </section>
                         <section class="interests">
                             <label for="interests">Interests:</label><br>
                             <textarea id="interests" name="interests" rows="4" maxlength="100" placeholder="Max 100 Characters.."></textarea>
                         </section>
-                    </form>
+                   
                     <section class="checkbox">
                         <input type="checkbox" id="termsCheckbox" name="termsCheckbox">
                         <label for="termsCheckbox">I agree to the <a href="terms.html" target="_blank">Terms and Conditions</a></label>
+                        <span id="termsCheckboxError" class="error-message"></span>
                     </section>
                     <div class="submit-button">
                         <button type="submit">Sign Up</button>
                     </div>
+                </form>
                 </div>
 
             </div>
 
-       
       </div>
+    
+      <script>
+        console.log('Script loaded');
+        function validateForm() {
+           
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const gender = document.querySelector('input[name="gender"]:checked');
+            const preferredLanguage = document.getElementById('preferredLanguage').value;
+            const termsCheckbox = document.getElementById('termsCheckbox').checked;
+    
+           
+            document.querySelectorAll('.error-message').forEach(elem => elem.textContent = '');
+    
+            
+            let isValid = true;
+    
+            if (firstName.trim() === '') {
+                document.getElementById('firstNameError').textContent = 'Please enter your first name';
+                isValid = false;
+            }
+    
+            if (lastName.trim() === '') {
+                document.getElementById('lastNameError').textContent = 'Please enter your last name';
+                isValid = false;
+            }
+    
+            
+            if (!isValidEmail(email)) {
+                document.getElementById('emailError').textContent = 'Please enter a valid email address';
+                isValid = false;
+            }
+    
+            
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            if (!passwordRegex.test(password)) {
+                document.getElementById('passwordError').textContent = 'Password must contain at least 8 characters, one uppercase letter, one lowercase letter, one digit, and one special character';
+                isValid = false;
+            }
+    
+            
+            if (password !== confirmPassword) {
+                document.getElementById('confirmPasswordError').textContent = 'Passwords do not match';
+                isValid = false;
+            }
+    
+            if (!gender) {
+            document.getElementById('genderError').textContent = 'Please select your gender';
+            isValid = false;
+            }
+
+       
+            if (preferredLanguage === '') {
+            document.getElementById('preferredLanguageError').textContent = 'Please select your preferred language';
+            isValid = false;
+            }
+           
+            if (!termsCheckbox) {
+                document.getElementById('termsCheckboxError').textContent = 'Please agree to the Terms and Conditions';
+                isValid = false;
+            }
+    
+            return isValid;
+        }
+    
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+    </script>
     
     </body>
     </html>
