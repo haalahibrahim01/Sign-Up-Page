@@ -121,7 +121,18 @@ input[type="radio"] {
     /* margin-right: 0px; */
   
 }
+.checkbox {
+    display: flex;
+    align-items: center; 
+    padding :5px;
+}
 
+.checkbox label {
+    padding-top: 5px;
+    margin: 0; 
+    font-size: 7px;
+    color: gray;
+}
 
 .submit-button {
     text-align: center;
