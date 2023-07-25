@@ -145,25 +145,93 @@ input[type="radio"] {
 }
 
 /* Center the submit button on larger screens */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 700px) {
+    
     .submit-button {
         text-align: center;
         align-self: center; 
     }
-}
-
-
-@media screen and (max-width: 767px) {
-    .column-layout {
-        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+    .main-column{
+        padding:0px;
+    }
+    .main-column section {
+        margin-bottom: 0px;
+        font-size: 15px;
+    }
+    .main-column label{
+        font-size: 15px;
+      }
+    fieldset{
+        font-size: 15px;
+    }
+    .language{
+        padding-top: 5px;
+        padding-bottom: 10px;
+    }
+    section .interests{
+        padding-bottom: 15px;
     }
 }
 
-@media screen and (max-width: 450px) {
+
+@media screen and (max-width: 700px) {
+    .column-layout {
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+    
+    }
+    .background{
+        max-width: 700px;
+    }
+    .sidebar-one {
+        display: none; /* Hide the sidebar column */
+    }
+    .main-column{
+        padding:0px;
+        max-width: 70%;
+        /* margin: */
+    }
+    .main-column section {
+        margin-bottom: 0px;
+    }
+    .main-column .language{
+        margin-bottom: 0px;
+          }
+        
+    .main-column .interests{
+        margin-bottom: 0px;
+          }
+    .main-column label{
+            font-size: 13px;
+          }
+
+}
+
+@media screen and (max-width: 400px) {
+    /* body{
+        max-width: 400px;
+    } */
     .column-layout {
         grid-template-columns: 1fr; /* Single column layout for smaller screens */
     }
     .sidebar-one {
         display: none; /* Hide the sidebar column */
     }
+
+    .main-column section {
+        margin-bottom: 0px;
+    }
+    .main-column .language{
+        margin-bottom: 0px;
+          }
+        
+    .main-column .interests{
+        margin-bottom: 0px;
+          }
+    .main-column label{
+            font-size: 13px;
+          }
+
+}
+@media screen and (max-width: 700px){
+
 }
